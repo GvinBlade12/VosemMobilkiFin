@@ -19,7 +19,7 @@ import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnSequential, btnParallel, btnToggleImage;
+    Button btnPosledov, btnParallel, btnToggleImage;
     ImageView dogImageView;
     boolean isImageVisible = false;
 
@@ -28,17 +28,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnSequential = findViewById(R.id.btnPosledov);
+        btnPosledov = findViewById(R.id.btnPosledov);
         btnParallel = findViewById(R.id.btnParallel);
         btnToggleImage = findViewById(R.id.btnToggleImage);
         dogImageView = findViewById(R.id.dog);
 
-        btnSequential.setOnClickListener(v -> runSequentialTasks());
+        btnPosledov.setOnClickListener(v -> runPosledovTasks());
         btnParallel.setOnClickListener(v -> runParallelTasks());
         btnToggleImage.setOnClickListener(v -> toggleDogImage());
     }
 
-    private void runSequentialTasks() {
+    private void runPosledovTasks() {
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
         executor.execute(() -> {
